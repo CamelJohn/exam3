@@ -1,0 +1,21 @@
+{
+  "AWSEBDockerrunVersion": 1,
+  "containerDefinitions": [
+    {
+      "name": "frontned",
+      "image": "john/multi-frontned",
+      "hostname": "frontned",
+      "essential": false,
+      "memory": 128
+    }, {
+      "name": "nginx",
+      "image": "john/multi-nginx",
+      "hostname": "nginx",
+      "essential": true,
+      "portMappings": [{
+          "hostPort": 80,
+          "containerPort": 80
+      }]
+    }
+  ]
+}
